@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <style>
         #map {
-            height: 100vh;
-            width: 100%;
+            height: 95vh;
+            width: 95%;
         }
     </style>
 </head>
@@ -18,10 +18,36 @@
     <script>
         var map = L.map('map').setView([31.4167, 34.5333], 13); // Beeri
 
-        L.tileLayer('https://tiles.govmap.gov.il/orto2023/{z}/{x}/{y}.jpg?token=eWJ6OlBZeUs1RkZjR3lTcFAwVjEwVg==', {
+        // Version constant
+        const VERSION = "060420241702";
+
+        // Define tile layers with VERSION constant in the attribution
+        var orto2023 = L.tileLayer('https://tiles.govmap.gov.il/orto2023/{z}/{x}/{y}.jpg?token=eWJ6OlBZeUs1RkZjR3lTcFAwVjEwVg==', {
             maxZoom: 24,
-            attribution: '&copy; <a href="https://www.govmap.gov.il/">GovMap</a> | 060420241645'
-        }).addTo(map);
+            attribution: '&copy; <a href="https://www.govmap.gov.il/">GovMap</a> | ' + VERSION
+        });
+
+        var orto2022 = L.tileLayer('https://tiles.govmap.gov.il/orto2022/{z}/{x}/{y}.jpg?token=eWJ6OlBZeUs1RkZjR3lTcFAwVjEwVg==', {
+            maxZoom: 24,
+            attribution: '&copy; <a href="https://www.govmap.gov.il/">GovMap</a> | ' + VERSION
+        });
+
+        var streetsAndBuildings = L.tileLayer('https://tiles.govmap.gov.il/streetsAndBuildings/{z}/{x}/{y}.png?token=eWJ6OlBZeUs1RkZjR3lTcFAwVjEwVg==', {
+            maxZoom: 24,
+            attribution: '&copy; <a href="https://www.govmap.gov.il/">GovMap</a> | ' + VERSION
+        });
+
+        // Add default layer
+        orto2023.addTo(map);
+
+        // Layers control
+        var baseLayers = {
+            "Orto 2023": orto2023,
+            "Orto 2022": orto2022,
+            "Streets and Buildings": streetsAndBuildings
+        };
+
+        L.control.layers(baseLayers).addTo(map);
     </script>
 </body>
 </html>
