@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Leaflet Map Centered on Tel Aviv</title>
+    <title>GovMap Test</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
@@ -19,7 +19,6 @@
         var map = L.map('map').setView([32.0853, 34.7818], 13); // Tel Aviv coordinates
 
         L.tileLayer('https://tiles.govmap.gov.il/orto2022/{z}/{x}/{y}.jpg?token=eWJ6OlBZeUs1RkZjR3lTcFAwVjEwVg==', {
-            maxZoom: 18,
             attribution: '&copy; <a href="https://www.govmap.gov.il/">GovMap</a>'
         }).addTo(map);
     </script>
