@@ -19,21 +19,21 @@
         var map = L.map('map').setView([31.4167, 34.5333], 13); // Beeri
 
         // Version constant
-        const VERSION = "060420241702";
+        const VERSION = "060420241706";
 
         // Define tile layers with VERSION constant in the attribution
         var orto2023 = L.tileLayer('https://tiles.govmap.gov.il/orto2023/{z}/{x}/{y}.jpg?token=eWJ6OlBZeUs1RkZjR3lTcFAwVjEwVg==', {
-            maxZoom: 24,
+            maxZoom: 20,
             attribution: '&copy; <a href="https://www.govmap.gov.il/">GovMap</a> | ' + VERSION
         });
 
         var orto2022 = L.tileLayer('https://tiles.govmap.gov.il/orto2022/{z}/{x}/{y}.jpg?token=eWJ6OlBZeUs1RkZjR3lTcFAwVjEwVg==', {
-            maxZoom: 24,
+            maxZoom: 19,
             attribution: '&copy; <a href="https://www.govmap.gov.il/">GovMap</a> | ' + VERSION
         });
 
         var streetsAndBuildings = L.tileLayer('https://tiles.govmap.gov.il/streetsAndBuildings/{z}/{x}/{y}.png?token=eWJ6OlBZeUs1RkZjR3lTcFAwVjEwVg==', {
-            maxZoom: 24,
+            maxZoom: 19,
             attribution: '&copy; <a href="https://www.govmap.gov.il/">GovMap</a> | ' + VERSION
         });
 
