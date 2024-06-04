@@ -19,6 +19,7 @@
         var map = L.map('map').setView([31.4167, 34.5333], 13); // Beeri
 
         L.tileLayer('https://tiles.govmap.gov.il/orto2022/{z}/{x}/{y}.jpg?token=eWJ6OlBZeUs1RkZjR3lTcFAwVjEwVg==', {
+            maxZoom: 24,
             attribution: '&copy; <a href="https://www.govmap.gov.il/">GovMap</a> | 060420241640'
         }).addTo(map);
     </script>
